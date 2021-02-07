@@ -1,15 +1,10 @@
 pipeline {
-    agent any
-    stages {
-        stage('Deploy') {
-            steps {
-                timeout(time: 1, unit: 'MINUTES') {
-                    sh '/var/jenkins_home/scripts/fibonacci.sh 5'
+           agent any
+           stages {
+                stage("Say_Hello") {
+                     steps {
+                          echo 'Hello World'
+                     }
                 }
-                timeout(time: 1, unit: 'MINUTES') {
-                    sh '/var/jenkins_home/scripts/fibonacci.sh 32'
-                }
-            }
-        }
-    }
-}
+           }
+      }
